@@ -1,0 +1,94 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos réalisations - AltaPro 65
+{% endblock %}
+
+{% block body %}
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col realisation-slider mx-4 px-0">
+				<section class="real_slider">
+					<div class="swiper-container">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide rounded" style="background: url('/Ressources/Images/Image-3test.jpg') no-repeat center center; background-size: cover;">
+								<div class="content text-center text-white">
+									<span>Lorem ipsum dolor sit amet.</span>
+									<h3>Lorem ipsum dolor sit amet.</h3>
+									<a href="#" class="btn btn-success">Plus de découverte</a>
+								</div>
+							</div>
+							<div class="swiper-slide rounded" style="background: url('/Ressources/Images/banniere-foret-montagne.avif') no-repeat center center; background-size: cover;">
+								<div class="content text-center text-white">
+									<span>Lorem ipsum dolor sit amet.</span>
+									<h3>Lorem ipsum dolor sit amet.</h3>
+									<a href="#" class="btn btn-success">Plus de découverte</a>
+								</div>
+							</div>
+							<div class="swiper-slide rounded" style="background: url('/Ressources/Images/Image-3.jpg') no-repeat center center; background-size: cover;">
+								<div class="content text-center text-white">
+									<span>Lorem ipsum dolor sit amet.</span>
+									<h3>Lorem ipsum dolor sit amet.</h3>
+									<a href="#" class="btn btn-success">Plus de découverte</a>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-button-next"></div>
+						<div class="swiper-button-prev"></div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+
+	<section class="gallery py-5">
+		<div class="container text-center">
+			<h2>Galerie photos</h2>
+			<div class="row">
+				<div class="col-md-4 mb-4">
+					<div class="image-item">
+						<img src="/Ressources/Images/Image-7.jpg" alt="Réalisations 1" class="gallery-image img-fluid">
+					</div>
+				</div>
+				<div class="col-md-4 mb-4">
+					<div class="image-item">
+						<img src="/Ressources/Images/Image-9.jpg" alt="Réalisations 2" class="gallery-image img-fluid">
+					</div>
+				</div>
+				<div class="col-md-4 mb-4">
+					<div class="image-item">
+						<img src="/Ressources/Images/Image-10.jpg" alt="Réalisations 3" class="gallery-image img-fluid">
+					</div>
+				</div>
+				<div class="col-md-4 mb-4">
+					<div class="image-item">
+						<img src="/Ressources/Images/Image-13.jpg" alt="Réalisations 4" class="gallery-image img-fluid">
+					</div>
+				</div>
+				<div class="col-md-4 mb-4">
+					<div class="image-item">
+						<img src="/Ressources/Images/Image-2.jpg" alt="Réalisations 5" class="gallery-image img-fluid">
+					</div>
+				</div>
+				<div class="col-md-4 mb-4">
+					<div class="image-item">
+						<img src="/Ressources/Images/Image-3.jpg" alt="Réalisations 6" class="gallery-image img-fluid">
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<div class="modal" id="imageModal" style="display: none">
+		<span class="close" id="closeModal">&times;</span>
+		<img class="modal-content" id="modalImage"/>
+	</div>
+
+	<section class="video-wrapper py-5">
+		<div class="container text-center">
+			<h2>Nos Réalisations en vidéo</h2>
+			<div class="video-container">
+				<video id="video" src="/Ressources/Images/Video elagage.MP4" controls class="img-fluid"></video>
+			</div>
+		</div>
+	</section>
+{% endblock %}

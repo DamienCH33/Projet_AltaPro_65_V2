@@ -1,0 +1,67 @@
+<?php
+
+namespace App\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Attribute\Route;
+
+final class StaticController extends AbstractController
+{
+    #[Route('/', name: 'app_home')]    
+    /**
+     * index: affiche la page d'accueil
+     *
+     * @return Response
+     */
+    public function index(): Response
+    {
+        return $this->render('index.html.twig', [
+            'controller_name' => 'TemplatesController',
+        ]);
+    }
+    
+    #[Route('/services', name: 'app_services')]    
+    /**
+     * services: affiche la page des services
+     *
+     * @return Response
+     */
+    public function services(): Response
+    {
+        return $this->render('/services.html.twig');
+    }
+
+     #[Route('/realisations', name: 'app_realisations')]    
+    /**
+     * realisations : affiche la page des réalisations
+     *
+     * @return Response
+     */
+    public function realisations(): Response
+    {
+        return $this->render('/realisations.html.twig');
+    }
+
+ #[Route('/about', name: 'app_about')]    
+    /**
+     * about : affiche la page à propos
+     *
+     * @return Response
+     */
+    public function about(): Response
+    {
+        return $this->render('/about.html.twig');
+    }
+
+     #[Route('/contact', name: 'app_contact')]    
+    /**
+     * contact : affiche la page de contact
+     *
+     * @return Response
+     */
+    public function contact(): Response
+    {
+        return $this->render('/contact.html.twig');
+    }
+}

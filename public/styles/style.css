@@ -114,7 +114,7 @@ nav-links {
 /* === 2. HOMEPAGE-BANNER === */
 
 .banner {
-  background: url('/Ressources/Images/banniere-foret-montagne.avif') no-repeat center center/cover;
+  background: url('/images/banniere-foret-montagne') no-repeat center center/cover;
   max-width: calc(100% - 40px);
   height: 50vh;
   display: flex;

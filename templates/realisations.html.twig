@@ -5,84 +5,61 @@
 
 {% block body %}
 
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col realisation-slider mx-4 px-0">
-				<section class="real_slider">
-					<div class="swiper-container">
-						<div class="swiper-wrapper">
-							<div class="swiper-slide rounded" style="background: url('/images/Image-3test.jpg') no-repeat center center; background-size: cover;">
-								<div class="content text-center text-white">
-									<span>Lorem ipsum dolor sit amet.</span>
-									<h3>Lorem ipsum dolor sit amet.</h3>
-									<a href="#" class="btn btn-success">Plus de découverte</a>
-								</div>
-							</div>
-							<div class="swiper-slide rounded" style="background: url('/images/banniere-foret-montagne.avif') no-repeat center center; background-size: cover;">
-								<div class="content text-center text-white">
-									<span>Lorem ipsum dolor sit amet.</span>
-									<h3>Lorem ipsum dolor sit amet.</h3>
-									<a href="#" class="btn btn-success">Plus de découverte</a>
-								</div>
-							</div>
-							<div class="swiper-slide rounded" style="background: url('/images/Image-3.jpg') no-repeat center center; background-size: cover;">
-								<div class="content text-center text-white">
-									<span>Lorem ipsum dolor sit amet.</span>
-									<h3>Lorem ipsum dolor sit amet.</h3>
-									<a href="#" class="btn btn-success">Plus de découverte</a>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-button-next"></div>
-						<div class="swiper-button-prev"></div>
-					</div>
-				</section>
+	<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img src="{{ asset('/images/Image-3test.jpg') }}" class="d-block w-100" alt="...">
+			</div>
+			<div class="carousel-item">
+				<img src="{{ asset('/images/banniere-foret-montagne.webp') }}" class="d-block w-100" alt="...">
+			</div>
+			<div class="carousel-item">
+				<img src="{{ asset('/images/Image-3.jpg') }}" class="d-block w-100" alt="...">
 			</div>
 		</div>
+		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Next</span>
+		</button>
 	</div>
 
 	<section class="gallery py-5">
 		<div class="container text-center">
 			<h2>Galerie photos</h2>
-			<div class="row">
-				<div class="col-md-4 mb-4">
-					<div class="image-item">
-						<img src="{{ asset('/images/Image-7.jpg') }}" alt="Réalisations 1" class="gallery-image img-fluid">
-					</div>
-				</div>
-				<div class="col-md-4 mb-4">
-					<div class="image-item">
-						<img src="{{ asset('/images/Image-9.jpg') }}" alt="Réalisations 2" class="gallery-image img-fluid">
-					</div>
-				</div>
-				<div class="col-md-4 mb-4">
-					<div class="image-item">
-						<img src="{{ asset('/images/Image-10.jpg') }}" alt="Réalisations 3" class="gallery-image img-fluid">
-					</div>
-				</div>
-				<div class="col-md-4 mb-4">
-					<div class="image-item">
-						<img src="{{ asset('/images/Image-13.jpg') }}" alt="Réalisations 4" class="gallery-image img-fluid">
-					</div>
-				</div>
-				<div class="col-md-4 mb-4">
-					<div class="image-item">
-						<img src="{{ asset('/images/Image-2.jpg') }}" alt="Réalisations 5" class="gallery-image img-fluid">
-					</div>
-				</div>
-				<div class="col-md-4 mb-4">
-					<div class="image-item">
-						<img src="{{ asset('/images/Image-3.jpg') }}" alt="Réalisations 6" class="gallery-image img-fluid">
+
+			<div class="d-flex flex-wrap gap-3">
+				<img src="{{ asset('/images/Image-7.jpg') }}" class="img-thumbnail gallery-item" alt="Photo 1" data-index="0" style="width:150px;cursor:pointer;">
+				<img src="{{ asset('/images/Image-9.jpg') }}" class="img-thumbnail gallery-item" alt="Photo 2" data-index="1" style="width:150px;cursor:pointer;">
+				<img src="{{ asset('/images/Image-10.jpg') }}" class="img-thumbnail gallery-item" alt="Photo 3" data-index="2" style="width:150px;cursor:pointer;">
+				<img src="{{ asset('/images/Image-13.jpg') }}" class="img-thumbnail gallery-item" alt="Photo 4" data-index="3" style="width:150px;cursor:pointer;">
+				<img src="{{ asset('/images/Image-2.jpg') }}" class="img-thumbnail gallery-item" alt="Photo 2" data-index="1" style="width:150px;cursor:pointer;">
+				<img src="{{ asset('/images/Image-3.jpg') }}" class="img-thumbnail gallery-item" alt="Photo 3" data-index="2" style="width:150px;cursor:pointer;">
+
+			</div>
+
+			<div class="modal fade" id="galleryModal" tabindex="-1" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered modal-lg">
+					<div class="modal-content bg-dark">
+						<div
+							class="modal-body p-0 position-relative text-center">
+							<!-- Image -->
+							<img
+							id="modalImage" src="" class="img-fluid rounded" alt="Photo">
+
+							<!-- Boutons navigation -->
+							<button class="btn btn-dark position-absolute top-50 start-0 translate-middle-y" id="prevBtn">⟨</button>
+							<button class="btn btn-dark position-absolute top-50 end-0 translate-middle-y" id="nextBtn">⟩</button>
+						</div>
 					</div>
 				</div>
 			</div>
+
 		</div>
 	</section>
-
-	<div class="modal" id="imageModal" style="display: none">
-		<span class="close" id="closeModal">&times;</span>
-		<img class="modal-content" id="modalImage"/>
-	</div>
 
 	<section class="video-wrapper py-5">
 		<div class="container text-center">
@@ -92,4 +69,82 @@
 			</div>
 		</div>
 	</section>
+
+	<section class="comments py-5">
+		<div class="container">
+			<h2>Donnez nous votre avis</h2>
+			{{ form_start(form, {'action': path('app_comment_form'), 'method': 'POST'}) }}
+
+			<div class="mb-3">
+				{{ form_widget(form.name) }}
+				{{ form_errors(form.name) }}
+			</div>
+
+			<div class="mb-3">
+				{{ form_widget(form.firstname) }}
+				{{ form_errors(form.firstname) }}
+			</div>
+
+			<div class="mb-3">
+				{{ form_widget(form.comment) }}
+				{{ form_errors(form.comment) }}
+			</div>
+
+			<div class="mb-3 star-container">
+				{{ form_label(form.rating) }}
+				<div class="star-rating">
+					{{ form_widget(form.rating) }}
+				</div>
+				{{ form_errors(form.rating) }}
+			</div>
+
+			<div class="mb-3">
+				{{ form_row(form.submit, {'attr': {'class': 'btn btn-primary cta-button'}}) }}
+			</div>
+
+			{{ form_end(form) }}
+
+		</div>
+	</section>
+
+
+	<section class="comments-list py-5">
+		<div class="container">
+			<h3>Avis récents</h3>
+
+			{% if comments|length > 0 %}
+				<div class="comment-container pe-2">
+					{% for comment in comments %}
+						<div class="comment mb-3 p-3">
+							<div>
+								<strong>{{ comment.name }}
+									{{ comment.firstname }}</strong>
+								:
+								{{ comment.comment }}
+							</div>
+
+							{# Affichage des étoiles #}
+							<div class="star-rating" style="justify-content: flex-start; font-size: 1.2rem;">
+								{% for i in 1..5 %}
+									{% if i <= comment.rating %}
+										<span style="color: #ff9900;">★</span>
+									{% else %}
+										<span style="color: #ccc;">★</span>
+									{% endif %}
+								{% endfor %}
+							</div>
+
+							<div style="font-size: 0.9em; color: gray; margin-top: 5px;">
+								Posté le
+								{{ comment.send_at|date('d/m/Y H:i') }}
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			{% else %}
+				<p>Aucun commentaire pour le moment.</p>
+			{% endif %}
+		</div>
+	</section>
+
 {% endblock %}

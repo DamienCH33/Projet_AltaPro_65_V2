@@ -295,120 +295,18 @@ nav-links {
 }
 
 /* REALISATION-SLIDER*/
-.real_slider {
-  position: relative;
-  overflow: hidden;
-  transition: background-color 1s ease-in-out, box-shadow 0.3s ease-in-out;
+
+#carouselExampleAutoplaying {
+  margin: 0 20px;
 }
 
-/* Slider */
-.swiper-container {
+#carouselExampleAutoplaying .carousel-item img {
+  height: 500px;
+  object-fit: cover;
   width: 100%;
-  height: 100%;
-  position: relative;
-  overflow: hidden;
+  border-radius: 10px;
 }
 
-.swiper-wrapper {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  width: 100%;
-}
-
-.swiper-slide {
-  flex: 0 0 100%;
-  min-width: 100%;
-  height: 50vh;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-/* Contenu de chaque slide */
-.content {
-  color: white;
-  text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.content span {
-  font-size: 1.2em;
-  letter-spacing: 1px;
-}
-
-.content h3 {
-  font-size: 2.5em;
-  font-weight: bold;
-  margin: 15px 0;
-}
-
-.content .btn {
-  display: inline-block;
-  padding: 10px 20px;
-  background: #008a00;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  margin-top: 15px;
-  font-size: 1em;
-  transition: background-color 0.3s ease;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4), -4px -4px 10px rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-}
-
-.content .btn:hover {
-  background-color: #008a00;
-}
-
-/* Navigation */
-.swiper-button-next, .swiper-button-prev {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: #00b300;
-  color: white;
-  padding: 3px 8px;
-  cursor: pointer;
-  border: none;
-  font-size: 1.2em;
-  transition: background-color 0.3s ease;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4), -4px -4px 10px rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  background: transparent;
-}
-
-.swiper-button-next:hover, .swiper-button-prev:hover {
-  background-color: #008a00;
-  color: white;
-}
-
-.swiper-button-next {
-  right: 10px;
-}
-
-.swiper-button-prev {
-  left: 10px;
-}
-
-/* Ajout des flèches */
-.swiper-button-next::before {
-  content: '\2192'; /* flèche droite */
-  font-size: 1.2em; /* taille ajustée */
-  line-height: 1;
-}
-
-.swiper-button-prev::before {
-  content: '\2190'; /* flèche gauche */
-  font-size: 1.2em; /* taille ajustée */
-  line-height: 1;
-}
 /* REALISATION-GALERIE*/
     
 h1 {
@@ -433,30 +331,7 @@ h2 {
   margin-top: 20px;
   padding: 20px;
 }
-    
-.image-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 15px;
-}
 
-.image-item {
-  position: relative;
-}
-      
-.image-item img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 8px;
-  border: 2px solid #ddd;
-  box-sizing: border-box;
-  transition: transform 0.3s ease;
-}
-
-.image-item img:hover {
-  transform: scale(1.05);
-}
 
 /* REALISATION-VIDEO*/
 .video-wrapper {
@@ -491,6 +366,51 @@ video {
   max-height: 500px;
 }
 
+/* REALISATION COMMENT*/
+.comments {
+  background: linear-gradient(135deg, #3d2b1f, #004d00, #007a00,#3d2b1f);
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.5), -4px -4px 10px rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  text-align: center;
+  max-width: calc(100% - 40px);
+  margin: 0 20px;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.star-rating label {
+  font-size: 2rem;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  padding: 0 2px;
+}
+
+.star-rating input[type="radio"]:checked ~ label {
+  color: #ff9900;
+}
+.star-rating input[type="radio"] {
+  display: none;
+}
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+  color: #ff9900;
+}
+.star-rating {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  background: #008a00;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+    
+ 
 /* ABOUT */
 .main-content {
   display: flex;
